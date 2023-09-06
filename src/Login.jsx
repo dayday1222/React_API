@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import work from './components/work.png'
+import todo from './components/todo.png'
 
 const { VITE_BASEURL } = import.meta.env;
 
@@ -43,8 +45,8 @@ function Login () {
     <div id="loginPage" className="bg-yellow">
       <div className="conatiner loginPage vhContainer ">
         <div className="side">
-          <a style={{cursor: 'pointer'}}><img className="logoImg" src="https://upload.cc/i1/2022/03/23/rhefZ3.png" alt="" /></a>
-          <img className="d-m-n" src="https://upload.cc/i1/2022/03/23/tj3Bdk.png" alt="workImg" />
+          <a style={{cursor: 'pointer'}}><img className="logoImg" src={todo} alt="" /></a>
+          <img className="d-m-n" src={work} alt="workImg" />
         </div>
         <div>
           <form className="formControls" action="index.html">
