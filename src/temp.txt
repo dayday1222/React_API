@@ -1,0 +1,44 @@
+ <div>
+       <input type="text" id="todo" name='todo' value={todo} onChange={(e) => {
+         setTodo(e.target.value)
+       }} />
+       <label htmlFor="todo"></label>
+       <button type='button' onClick={addTodo}>Add Todo</button>
+       <list>
+         <ul>
+           {
+             list.map((todoList) => {
+               return (
+                 <li key={todoList.id}>
+
+                   {todoList.content}<span> </span>{todoList.status ? "完成" : "未完成"}|
+
+                   {/* 更新內容 */}
+                   <input type="text" id="updateText" placeholder="更新值" onChange={(e) => {
+                     handleChange(e, todoList)
+                   }} />
+                   <label htmlFor="updateText"></label>
+                  
+                   {/* 刪除 */}
+                   <button type="button" onClick={() => {
+                     deleteTodo(todoList)
+                   }
+                   }>Delete</button>
+
+                   {/* 更新 */}
+                   <button type="button" onClick={() => {
+                     updateTodo(todoList)
+                   }} >Update</button>
+
+                   {/* 狀態 */}
+                   <button type='button' onClick={() => {
+                     updateStatus(todoList)
+                   }}>Toggle Status</button>
+
+                 </li>
+               )
+             })
+           }
+         </ul>
+       </list>
+     </div>
