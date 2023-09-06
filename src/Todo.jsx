@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import empty from './components/empty.png'
 
@@ -215,7 +216,8 @@ function Todo () {
         <ul>
             <li className="todo_sm"><a style={{cursor: 'pointer'}}><span>{nickname}的代辦</span></a></li>
             {/* <li className="todo_sm"><NavLink><span>{nickname}的代辦</span></NavLink></li> */}
-            <li><a href="/Login#/">登出</a></li>
+            {/* <li><a href="/Login#/">登出</a></li> */}
+            <li><NavLink to="/">登出</NavLink></li>
         </ul>
       </nav>
         <div className="conatiner todoListPage vhContainer">
